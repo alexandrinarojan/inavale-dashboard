@@ -36,6 +36,20 @@ The 4 layers follow the maturity of data analysis:
 3. **What's next** (predictive): forecasts for 2026, with an uncertainty interval.
 4. **What we do** (scenarios): simulators with visible assumptions that the user can change.
 
+## Key findings
+
+What the dashboard shows about InaVale over 2021–2025. The company is fictional, but the figures are consistent with each other, and each finding can be traced to a screen of the dashboard.
+
+1. **Steady growth and a strong 2025.** Gross written premium grew from €8.4bn in 2021 to €11.6bn in 2025, +8.4% a year. In 2025 the combined ratio fell to 87.7% (from 95.5% in 2024), ROE reached 17.1% and net profit €1.7bn. *(Overview › What happened)*
+2. **Part of the growth is currency.** At 2021 exchange rates, growth in 2025 is +6.8% instead of +8.4%. About 15% of the premium increase over 2021–2025 comes from exchange rates, not from business. *(Business & products › Why)*
+3. **Catastrophes explain the weak years.** Three events cost an estimated €806m: Storm Aurel (Europe, July 2023, €282m), floods in southern Brazil (May 2024, €95m) and Hurricane Delphine (US Gulf Coast, September 2024, €429m). The loss ratio rose to 72.9% in 2023 and 72.6% in 2024, against 65.3% in 2025, and net profit collapsed in 2023-Q3 and 2024-Q3. *(Claims › Why, Finance & investors › What happened)*
+4. **The 2025 recovery comes from performance, not from the portfolio mix.** Of the −7.8 pp fall in the combined ratio, −7.9 pp is the rate effect and practically 0 pp the mix effect. North America contributed most, from 106.1% to 87.1%. *(Segments › Why)*
+5. **A loss-making line that keeps growing.** Motor in Latin America has a combined ratio of 104.4% in 2025 and 110.0% over five years, yet its premium beat budget by 5.2%. This suggests, without proving it, that the price is too low. *(Business & products › Why, What we do)*
+6. **People are the weak spot.** Voluntary attrition missed its target in every year (13.9% against 12% in 2025, with a peak of 16.1% in 2022), and Customer Service loses 21.3% of its staff a year. Five of the ten strategic targets were missed in 2025: attrition, engagement, customer NPS, the digital share of new policies and women in senior leadership. *(Overview, People)*
+7. **From staff to customers: a link worth watching.** In 2023, attrition in the Europe claims team jumped to 31.8%, settlement time rose to 36.9 days and customer satisfaction fell to 4.04/5. By 2025 all three had recovered (10.8%, 21.6 days, 4.19). Satisfaction drops from 4.32/5 for claims settled within 15 days to 3.07/5 above 90 days. This is a correlation, not a proven cause. *(Overview › Why, Claims › Why)*
+8. **Capital stayed solid.** Solvency fell to 155% in 2022-Q3, when rising interest rates created unrealised losses on bonds (71.8% of the portfolio), but ended 2025 at 219%, above the 180% target and the 150% internal threshold. *(Finance & investors)*
+9. **Outlook for 2026.** Premium is forecast at €12.5bn (+7.4%), with Asia-Pacific growing fastest (+13.6%). The combined ratio forecast is 89.9%, with an 80% interval of 87.1%–92.7%: within reach of the target, but not guaranteed. *(What's next layers)*
+
 ## The data
 
 ### Why synthetic data
