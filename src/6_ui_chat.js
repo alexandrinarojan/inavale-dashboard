@@ -486,7 +486,7 @@ const UI = {
   footCols: [
     `
  <div><h4>Despre proiect</h4><p>Un dashboard educațional de analiză a datelor, construit ca un instrument profesionist: 6 domenii, 4 layere de profunzime, perioade comparabile, prognoze și scenarii.</p>` +
-      `<p>Scopul lui e să arate cum gândește un analist de date senior, de la „ce s-a întâmplat” până la „ce facem”.</p>` +
+      `<p>Scopul lui e să arate cum gândește un analist de date, de la „ce s-a întâmplat” până la „ce facem”.</p>` +
       `</div>
  <div><h4>Cum îl folosești</h4><p>Alege un domeniu în bara de sus, apoi profunzimea analizei. ` +
       `Filtrele apar doar unde se aplică.</p><p>„?” explică un termen, „Explică” interpretează o fereastră, iar chat-ul răspunde doar din datele InaVale.</p>` +
@@ -495,13 +495,13 @@ const UI = {
       `Contabilitatea de asigurări și solvabilitatea sunt simplificate; daunele individuale sunt un eșantion de 25.000 de dosare.</p>` +
       `<p><button type="button" class="lk" data-go="dat">Vezi tabul Despre date</button></p>` +
       `</div>
- <div><h4>Despre Ina</h4><p>Concepția și analiza: <b>Alexandrina Ileana Rojan</b> (Ina), analist de date. ` +
+ <div><h4>Despre Ina</h4><p>Concepția și analiza: <b>Alexandrina-Ileana Rojan</b> (Ina), analist de date. ` +
       `Numele companiei fictive, InaVale, vine de la ea.</p>` +
       `<p class="links"><a href="https://www.linkedin.com/in/alexandrina-ileana-rojan/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/alexandrinarojan" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/alexandrinarojan/inavale-dashboard" target="_blank" rel="noopener">Codul proiectului</a></p></div>
 `,
     `
  <div><h4>About the project</h4><p>An educational data analytics dashboard, built like a professional tool: 6 domains, 4 layers of depth, comparable periods, forecasts and scenarios.</p>` +
-      `<p>Its purpose is to show how a senior data analyst thinks, from “what happened” to “what we do”.</p>` +
+      `<p>Its purpose is to show how a data analyst thinks, from “what happened” to “what we do”.</p>` +
       `</div>
  <div><h4>How to use it</h4><p>Pick a domain in the top bar, then the depth of analysis. ` +
       `Filters appear only where they apply.</p><p>“?” explains a term, “Explain” interprets a window, and the chat answers only from InaVale’s data.</p>` +
@@ -510,7 +510,7 @@ const UI = {
       `Insurance accounting and solvency are simplified; individual claims are a sample of 25,000 files.</p>` +
       `<p><button type="button" class="lk" data-go="dat">See the About the data tab</button></p>` +
       `</div>
- <div><h4>About Ina</h4><p>Concept and analysis: <b>Alexandrina Ileana Rojan</b> (Ina), data analyst. ` +
+ <div><h4>About Ina</h4><p>Concept and analysis: <b>Alexandrina-Ileana Rojan</b> (Ina), data analyst. ` +
       `The fictional company’s name, InaVale, comes from hers.</p>` +
       `<p class="links"><a href="https://www.linkedin.com/in/alexandrina-ileana-rojan/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/alexandrinarojan" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/alexandrinarojan/inavale-dashboard" target="_blank" rel="noopener">Project code</a></p></div>
 `,
@@ -1143,7 +1143,7 @@ const TOOLS = [
   },
 ].map(bi);
 const RULES_RO =
-  `Ești analistul de date senior al dashboard-ului InaVale Assurance Group, o companie de asigurări FICTIVĂ (date sintetice, 2021–2025, sume în EUR). ` +
+  `Ești analistul de date al dashboard-ului InaVale Assurance Group, o companie de asigurări FICTIVĂ (date sintetice, 2021–2025, sume în EUR). ` +
   `Discuți cu cineva care învață analiza de date.
 Reguli:
 1. Răspunzi DOAR pe baza datelor: contextul ecranului pe care ți-l trimit la fiecare întrebare și rezultatele instrumentelor query_*. ` +
@@ -1163,7 +1163,7 @@ Reguli:
 7. ` +
   `Răspunde în limba în care ți se scrie (implicit română). Când e util, sugerează la final un singur pas următor: alt ecran, layer sau filtru de încercat.`;
 const RULES_EN =
-  `You are the senior data analyst of the InaVale Assurance Group dashboard, a FICTIONAL insurance company (synthetic data, 2021–2025, amounts in EUR). ` +
+  `You are the data analyst of the InaVale Assurance Group dashboard, a FICTIONAL insurance company (synthetic data, 2021–2025, amounts in EUR). ` +
   `You are talking to someone who is learning data analysis.
 Rules:
 1. ` +
