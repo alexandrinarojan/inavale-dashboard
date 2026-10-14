@@ -1,0 +1,8 @@
+# Data generation and Excel export (scripts/)
+pandas
+numpy
+openpyxl
+
+# Automated tests (tests/run_tests.py)
+# after installing, also run: playwright install chromium
+playwright
