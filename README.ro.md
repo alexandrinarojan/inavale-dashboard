@@ -194,6 +194,6 @@ Testele parcurg toate cele 25 de ecrane la 7 lățimi de desktop și pe 5 dispoz
 
 ## Autor
 
-**[Numele tău]** · [LinkedIn] · [email]
+**[Alexandrina-Ileana Rojan]** · [LinkedIn](https://www.linkedin.com/in/alexandrina-ileana-rojan/)
 
 Proiect realizat în 2026 ca exercițiu de analiză a datelor.
