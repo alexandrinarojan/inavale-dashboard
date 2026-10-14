@@ -198,6 +198,6 @@ The tests go through all 25 screens at 7 desktop widths and on 5 mobile devices,
 
 ## Author
 
-**[Alexandrina-Ileana Rojan]** · [LinkedIn](https://www.linkedin.com/in/alexandrina-ileana-rojan/) 
+**Alexandrina-Ileana Rojan** · [LinkedIn](https://www.linkedin.com/in/alexandrina-ileana-rojan/) 
 
 Project created in 2026 as a data analysis exercise.
