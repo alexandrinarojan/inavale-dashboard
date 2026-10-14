@@ -131,7 +131,7 @@ async def layout_and_chat(b, lang):
         and (
             ("Ești analistul" in rules)
             if lang == "ro"
-            else ("You are the senior data analyst" in rules)
+            else ("You are the data analyst" in rules)
         )
         and not errs
     )
