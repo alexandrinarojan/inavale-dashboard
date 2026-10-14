@@ -6,7 +6,7 @@ Checks, in each language:
  - all 25 screens load without JS errors;
  - layout at 7 desktop widths and on 5 mobile devices (no horizontal scrolling, windows/charts not too narrow,
    figures not cut off on the cards, header not too tall);
- - the chat in claude.ai (simulated, with the data tools) and in public mode.
+ - the chat in claude.ai (simulated, with the data tools) and in public mode (prepared answers for every suggested question).
 And additionally:
  - language choice: browser language on the first visit, the RO | EN switch, the choice kept after reload;
  - the tip on phones: shown on narrow screens, hidden automatically when the page becomes wider;
@@ -148,8 +148,26 @@ async def layout_and_chat(b, lang):
     await pg.click(".sugg button")
     await pg.wait_for_timeout(200)
     t = await pg.evaluate("document.getElementById('msgs').innerText")
-    ok = ("nu este activ" in t) if lang == "ro" else ("is not active" in t)
-    print(f"[{lang}] chat public mode:", "OK" if ok else t[:200])
+    ok = ("Răspuns pregătit" in t) if lang == "ro" else ("Prepared answer" in t)
+    # a question without a prepared answer gets the message about the claude.ai version
+    await pg.fill("#chatIn", "abc xyz qwerty")
+    await pg.press("#chatIn", "Enter")
+    await pg.wait_for_timeout(200)
+    t2 = await pg.evaluate("document.getElementById('msgs').innerText")
+    ok = ok and (
+        ("Nu am un răspuns pregătit" in t2)
+        if lang == "ro"
+        else ("prepared answer for this" in t2)
+    )
+    # every suggested question on every screen has a prepared answer, in both languages
+    missing = await pg.evaluate(
+        "Object.keys(SUGG_EN).filter(k=>!(window.__PREP__[k]&&window.__PREP__[k].ro.length===3&&window.__PREP__[k].en.length===3))"
+    )
+    ok = ok and not missing and not errs
+    print(
+        f"[{lang}] chat public mode (prepared answers):",
+        "OK" if ok else (t2[-200:], missing, errs),
+    )
     fails += not ok
     await ctx.close()
     return fails

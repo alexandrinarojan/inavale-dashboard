@@ -495,8 +495,9 @@ const UI = {
       `Contabilitatea de asigurări și solvabilitatea sunt simplificate; daunele individuale sunt un eșantion de 25.000 de dosare.</p>` +
       `<p><button type="button" class="lk" data-go="dat">Vezi tabul Despre date</button></p>` +
       `</div>
- <div><h4>Despre Ina</h4><p>Concepția și analiza: Ina, analist de date. ` +
-      `Numele companiei fictive, InaVale, vine de la ea.</p></div>
+ <div><h4>Despre Ina</h4><p>Concepția și analiza: <b>Alexandrina Ileana Rojan</b> (Ina), analist de date. ` +
+      `Numele companiei fictive, InaVale, vine de la ea.</p>` +
+      `<p class="links"><a href="https://www.linkedin.com/in/alexandrina-ileana-rojan/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/alexandrinarojan" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/alexandrinarojan/inavale-dashboard" target="_blank" rel="noopener">Codul proiectului</a></p></div>
 `,
     `
  <div><h4>About the project</h4><p>An educational data analytics dashboard, built like a professional tool: 6 domains, 4 layers of depth, comparable periods, forecasts and scenarios.</p>` +
@@ -509,13 +510,14 @@ const UI = {
       `Insurance accounting and solvency are simplified; individual claims are a sample of 25,000 files.</p>` +
       `<p><button type="button" class="lk" data-go="dat">See the About the data tab</button></p>` +
       `</div>
- <div><h4>About Ina</h4><p>Concept and analysis: Ina, data analyst. ` +
-      `The fictional company’s name, InaVale, comes from hers.</p></div>
+ <div><h4>About Ina</h4><p>Concept and analysis: <b>Alexandrina Ileana Rojan</b> (Ina), data analyst. ` +
+      `The fictional company’s name, InaVale, comes from hers.</p>` +
+      `<p class="links"><a href="https://www.linkedin.com/in/alexandrina-ileana-rojan/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/alexandrinarojan" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/alexandrinarojan/inavale-dashboard" target="_blank" rel="noopener">Project code</a></p></div>
 `,
   ],
   footFine: [
-    "Asistentul AI funcționează în versiunea găzduită în claude.ai: acolo întrebările se trimit către Claude împreună cu cifrele de pe ecran, din contul celui care le pune. Datele sunt sintetice și nu descriu persoane sau companii reale. Versiune: 30 septembrie 2026.",
-    "The AI assistant works in the version hosted on claude.ai: there, questions are sent to Claude together with the figures on screen, from the account of the person asking. The data is synthetic and does not describe real people or companies. Version: 30 September 2026.",
+    "Asistentul AI funcționează în versiunea găzduită în claude.ai: acolo întrebările se trimit către Claude împreună cu cifrele de pe ecran, din contul celui care le pune. În afara claude.ai, chat-ul dă răspunsuri pregătite la întrebările sugerate. Datele sunt sintetice și nu descriu persoane sau companii reale. Versiune: 14 octombrie 2026.",
+    "The AI assistant works in the version hosted on claude.ai: there, questions are sent to Claude together with the figures on screen, from the account of the person asking. Outside claude.ai, the chat gives prepared answers to the suggested questions. The data is synthetic and does not describe real people or companies. Version: 14 October 2026.",
   ],
   totop: ["↑ Meniu", "↑ Menu"],
   totopA: ["Înapoi la meniu", "Back to the menu"],
@@ -1190,8 +1192,7 @@ const msgs = document.getElementById("msgs"),
   form = document.getElementById("chatForm"),
   inp = document.getElementById("chatIn"),
   sendB = document.getElementById("chatSend");
-let pvN = 0,
-  sample = null,
+let sample = null,
   sampleReady = false,
   previewMode = false,
   turns = [],
@@ -1227,27 +1228,16 @@ function addMsg(cls, html) {
   msgs.scrollTop = msgs.scrollHeight;
   return d;
 }
-const previewMsg = () =>
-  tl(
-    `<p><b>Asistentul AI nu este activ în această versiune publică.</b></p>` +
-      `<p>El funcționează în versiunea găzduită în claude.ai, unde răspunde doar din datele InaVale: vede cifrele de pe ecran și poate calcula singur altele din setul complet. ` +
-      `Poate fi demonstrat live, la cerere.</p><p style="color:var(--ink-3);font-size:12px">Întrebările sugerate arată ce tip de analize poate face asistentul pe fiecare ecran.</p>`,
-    `<p><b>The AI assistant is not active in this public version.</b></p>` +
-      `<p>It works in the version hosted on claude.ai, where it answers only from InaVale’s data: it sees the figures on screen and can calculate others from the full dataset on its own. ` +
-      `It can be demonstrated live on request.</p><p style="color:var(--ink-3);font-size:12px">The suggested questions show the kind of analysis the assistant can do on each screen.</p>`,
-  );
 function intro() {
   msgs.innerHTML = "";
   if (previewMode) {
     addMsg(
       "sys",
       tl(
-        `<p>Aici poți discuta cu un asistent AI despre ce vezi pe ecran.</p>` +
-          `<p style="color:var(--ink-3);font-size:12px">Versiune publică: asistentul e disponibil doar în versiunea din claude.ai. ` +
-          `Întrebările de mai jos arată ce poate face pe acest ecran.</p>`,
-        `<p>Here you can talk to an AI assistant about what you see on screen.</p>` +
-          `<p style="color:var(--ink-3);font-size:12px">Public version: the assistant is available only in the claude.ai version. ` +
-          `The questions below show what it can do on this screen.</p>`,
+        `<p>Aici găsești răspunsuri pregătite la întrebările sugerate pentru fiecare ecran și explicații pentru termenii din glosar. Poți și să scrii o întrebare: caut răspunsul pregătit cel mai apropiat.</p>` +
+          `<p style="color:var(--ink-3);font-size:12px">Versiune publică, fără AI. Asistentul AI, care răspunde liber și calculează singur din date, funcționează în versiunea găzduită în claude.ai și poate fi demonstrat live, la cerere.</p>`,
+        `<p>Here you will find prepared answers to the suggested questions for each screen and explanations of glossary terms. You can also type a question: I look for the closest prepared answer.</p>` +
+          `<p style="color:var(--ink-3);font-size:12px">Public version, without AI. The AI assistant, which answers freely and calculates from the data on its own, works in the version hosted on claude.ai and can be demonstrated live on request.</p>`,
       ),
     );
     return;
@@ -1313,6 +1303,10 @@ function explainWin(title) {
     (w) => w.dataset.title === title,
   );
   openSheetFor(el);
+  if (previewMode) {
+    prepExplain(title);
+    return;
+  }
   ask(
     tl(
       `Explică-mi fereastra „${title}”: ce arată, ce e important de observat și ce ar trebui urmărit mai departe.`,
@@ -1372,13 +1366,7 @@ const errTxt = (code) => {
 };
 async function ask(q) {
   if (previewMode) {
-    addMsg("u", esc(q));
-    addMsg(
-      "sys",
-      pvN++
-        ? `<p style="color:var(--ink-2)">${tl("Asistentul AI nu este activ în versiunea publică; poate fi demonstrat live, în versiunea din claude.ai.", "The AI assistant is not active in the public version; it can be demonstrated live in the claude.ai version.")}</p>`
-        : previewMsg(),
-    );
+    prepAsk(q);
     return;
   }
   if (!sampleReady) {
@@ -1477,6 +1465,216 @@ function refreshChatLang() {
   if (!busy) sendB.textContent = tl("Trimite", "Send");
   updChat();
 }
+/* ---------- chat: prepared answers (public version, without the AI assistant) ----------
+   Outside claude.ai there is no Claude, so the chat answers from PREP: one prepared answer per suggested question
+   (PREP[screen][lang][i] answers suggFor(screen)[i], from src/chat_answers.json), written from the full 2021–2025 data and the default assumptions.
+   A typed question is matched against all suggested questions and their keywords (k); a glossary term is explained
+   from the glossary; anything else gets a link to the claude.ai version, where the AI assistant runs. */
+const PREP = window.__PREP__ || {};
+const normT = (s) =>
+  String(s)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9%]+/g, " ")
+    .trim();
+const STOPW = new Set(
+  (
+    "ce care cum de la in din pe si sau sa se este e sunt cat cate cata cati cel cei cea cele mai un o al ale a au ai am fi fost cu " +
+    "pentru despre dintre acest aceasta acestui acestei aici asta ne nu da ca le lui ei ii imi mi spune explica arata vreau poti " +
+    "the an of to on and or is are was were what which how why does do did we our for this that it its with from by be at me my " +
+    "you can tell show explain about there have has much many"
+  ).split(" "),
+);
+const toksT = (s) =>
+  normT(s)
+    .split(" ")
+    .filter((w) => w.length > 2 && !STOPW.has(w))
+    .map((w) => w.slice(0, 4));
+let PIDX = null,
+  PIDX_LANG = null;
+function prepIndex() {
+  if (PIDX && PIDX_LANG === LANG) return PIDX;
+  PIDX = [];
+  Object.keys(PREP).forEach((key) => {
+    const as = PREP[key][LANG] || [];
+    suggFor(key).forEach((q, i) => {
+      if (!as[i]) return;
+      const kw = new Set();
+      as[i].k.forEach((k) => toksT(k).forEach((w) => kw.add(w)));
+      PIDX.push({ key, q, a: as[i].a, nq: normT(q), qt: new Set(toksT(q)), kw });
+    });
+  });
+  PIDX_LANG = LANG;
+  return PIDX;
+}
+function prepMatch(q) {
+  const idx = prepIndex(),
+    nq = normT(q);
+  const exact = idx.find((e) => e.key === curKey && e.nq === nq) || idx.find((e) => e.nq === nq);
+  if (exact) return { best: exact, cov: 9, near: [] };
+  const qt = [...new Set(toksT(q))];
+  if (!qt.length) return { best: null, cov: 0, near: [] };
+  const sc = idx
+    .map((e) => {
+      let hits = 0,
+        s = 0;
+      qt.forEach((w) => {
+        if (e.qt.has(w)) {
+          s += 1;
+          hits++;
+        } else if (e.kw.has(w)) {
+          s += 0.8;
+          hits++;
+        }
+      });
+      let cov = s / Math.max(qt.length, 2);
+      if (e.key === curKey) cov += 0.12;
+      else if (e.key.slice(0, 3) === curKey.slice(0, 3)) cov += 0.05;
+      return { e, hits, cov };
+    })
+    .filter((x) => x.hits > 0)
+    .sort((a, b) => b.cov - a.cov);
+  const top = sc[0];
+  const best =
+    top && ((top.hits >= 2 && top.cov >= 0.5) || (qt.length === 1 && top.hits === 1))
+      ? top.e
+      : null;
+  const near = sc
+    .filter((x) => x.e !== best && x.cov >= 0.3)
+    .slice(0, 3)
+    .map((x) => x.e);
+  return { best, cov: best ? top.cov : 0, near };
+}
+/* glossary: the longest glossary term (in either language) that appears in the question */
+function glMatch(q) {
+  const nq = " " + normT(q) + " ";
+  let best = null,
+    bl = 0;
+  Object.values(GL).forEach((g) => {
+    const v = glShow(g);
+    [g.t, g.en, v.name].forEach((n) => {
+      const nn = normT(n || "");
+      if (nn.length >= 3 && nq.includes(" " + nn + " ") && nn.length > bl) {
+        best = g;
+        bl = nn.length;
+      }
+    });
+  });
+  if (best) return best;
+  /* a short question (one or two words): the shortest glossary term that contains all its word stems */
+  const qt = toksT(q);
+  if (!qt.length || qt.length > 2) return null;
+  let bn = 1e9;
+  Object.values(GL).forEach((g) => {
+    const st = new Set(toksT(glShow(g).name).concat(toksT(g.t), toksT(g.en || "")));
+    const n = glShow(g).name.length;
+    if (qt.every((w) => st.has(w)) && n < bn) {
+      best = g;
+      bn = n;
+    }
+  });
+  return best;
+}
+const isDefQ = (q) =>
+  /^(ce (inseamna|este|e|reprezinta|sunt)|cum se calculeaza|definit|what (is|are|does)|define|definition|meaning)/.test(
+    normT(q),
+  ) || toksT(q).length <= 2;
+const scrName = (key) => {
+  if (key === "dat1") return tl("Despre date", "About the data");
+  const d = DOMS.find((x) => x.id === key.slice(0, 3));
+  return `${d ? d.n : ""} › ${LAYERS[+key.slice(3) - 1].n}`;
+};
+const aiLink = () =>
+  `<p class="pv-src">${tl("Asistentul AI funcționează în versiunea găzduită în claude.ai și poate fi demonstrat live, la cerere.", "The AI assistant works in the version hosted on claude.ai and can be demonstrated live on request.")}</p>`;
+const nearBtns = (list) =>
+  list.length
+    ? `<p>${tl("Întrebări pregătite apropiate:", "Related prepared questions:")}</p><div class="pv-near">${list
+        .map(
+          (e) =>
+            `<button type="button" data-ask="${esc(e.q)}" data-key="${e.key}">${esc(e.q)}<span>${esc(scrName(e.key))}</span></button>`,
+        )
+        .join("")}</div>`
+    : "";
+function prepAnswer(e) {
+  const other = e.key !== curKey;
+  addMsg(
+    "a",
+    md(e.a) +
+      `<p class="pv-src">${tl("Răspuns pregătit", "Prepared answer")} · ${esc(scrName(e.key))} · ${tl("calculat pe datele 2021–2025 și pe ipotezele implicite, nu pe filtrele alese", "based on the 2021–2025 data and the default assumptions, not on the filters you chose")}` +
+      (other
+        ? ` · <button type="button" class="pv-go" data-pgo="${e.key}">${tl("Deschide ecranul", "Open the screen")}</button>`
+        : "") +
+      `</p>`,
+  );
+}
+function glAnswer(g) {
+  const v = glShow(g);
+  addMsg(
+    "a",
+    `<p><b>${esc(v.name)}</b>${v.alt ? ` (${esc(v.alt)})` : ""} — ${esc(v.def)}</p>` +
+      (v.f ? `<p>${esc(v.f)}</p>` : "") +
+      `<p class="pv-src">${tl("Din glosar", "From the glossary")} · ${esc(v.dom)}</p>`,
+  );
+}
+function noAnswer(near) {
+  addMsg(
+    "sys",
+    `<p>${tl("Nu am un răspuns pregătit pentru această întrebare.", "I don’t have a prepared answer for this question.")}</p>` +
+      `<p>${tl("În versiunea publică răspund la întrebările sugerate pe fiecare ecran (și la formulări apropiate) și explic termenii din glosar. Întrebările libere, cu căutare și calcule în date, sunt rolul asistentului AI.", "In the public version I answer the suggested questions on each screen (and similar wordings) and explain glossary terms. Free questions, with searches and calculations in the data, are the AI assistant’s job.")}</p>` +
+      nearBtns(near) +
+      aiLink(),
+  );
+}
+function prepAsk(q) {
+  addMsg("u", esc(q));
+  turns.push({ role: "user", content: q });
+  const m = prepMatch(q);
+  const g = glMatch(q);
+  if (g && !(m.best && m.cov >= 0.8) && (isDefQ(q) || !m.best)) {
+    glAnswer(g);
+    const more = [m.best].concat(m.near).filter(Boolean).slice(0, 3);
+    if (more.length) addMsg("sys", nearBtns(more));
+  } else if (m.best) prepAnswer(m.best);
+  else noAnswer(m.near);
+}
+function prepExplain(title) {
+  const w = [...document.querySelectorAll("#main section.w")].find(
+    (x) => x.dataset.title === title,
+  );
+  addMsg("u", esc(tl(`Explică fereastra „${title}”`, `Explain the “${title}” window`)));
+  turns.push({ role: "user", content: title });
+  const sub = w && w.querySelector(".sub") ? w.querySelector(".sub").innerText.trim() : "";
+  const tb = w && w.querySelector("h2 .q");
+  const g = tb ? GL[tb.dataset.term] : null;
+  let h = sub ? `<p><b>${tl("Ce arată", "What it shows")}:</b> ${esc(sub)}</p>` : "";
+  if (g) {
+    const v = glShow(g);
+    h += `<p><b>${esc(v.name)}</b> — ${esc(v.def)}</p>`;
+  }
+  h += `<p>${tl("Interpretarea fiecărei ferestre, pe cifrele de pe ecran, o face asistentul AI. Aici găsești răspunsuri pregătite la întrebările sugerate de mai jos.", "The interpretation of each window, using the figures on screen, is done by the AI assistant. Here you will find prepared answers to the suggested questions below.")}</p>`;
+  addMsg("a", h + aiLink());
+}
+msgs.addEventListener("click", (ev) => {
+  const a = ev.target.closest("[data-ask]");
+  if (a) {
+    const key = a.dataset.key;
+    if (key && key !== curKey) goScreen(key);
+    ask(a.dataset.ask);
+    return;
+  }
+  const g = ev.target.closest("[data-pgo]");
+  if (g) goScreen(g.dataset.pgo);
+});
+function goScreen(key) {
+  if (key === "dat1") S.dom = "dat";
+  else {
+    S.dom = key.slice(0, 3);
+    S.layer = +key.slice(3);
+  }
+  render();
+}
+
 let useTools = true;
 intro();
 sendB.textContent = tl("Trimite", "Send");
