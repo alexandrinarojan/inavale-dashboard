@@ -5,7 +5,7 @@ An interactive dashboard for a fictional insurance group, built as a data analys
 
 **[Open the dashboard](https://alexandrinarojan.github.io/inavale-dashboard/)** · runs directly in the browser, no installation needed
 
-![Screenshot of the dashboard](captura.png)
+![Screenshot of the dashboard](captura1.png)
 
 ---
 
