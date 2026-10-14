@@ -1,6 +1,5 @@
 # InaVale Assurance – a multi-layer analytics dashboard
 
-[Română](README.ro.md) · **English**
 
 An interactive dashboard for a fictional insurance group, built as a data analysis exercise: from “what happened” to “what we do”.
 
