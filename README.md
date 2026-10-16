@@ -10,7 +10,6 @@ An interactive dashboard for a fictional insurance group, built as a data analys
   <source media="(prefers-color-scheme: light)" srcset="dashboard-light.png">
   <img alt="Screenshot of the dashboard" src="dashboard-dark.png">
 </picture>
----
 
 ## Why this project
 
