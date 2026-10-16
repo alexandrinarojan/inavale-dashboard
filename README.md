@@ -7,9 +7,9 @@ An interactive dashboard for a fictional insurance group, built as a data analys
 
 /*![Screenshot of the dashboard](captura1.png)*/
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="captura1-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="captura1-light.png">
-  <img alt="Screenshot of the dashboard" src="captura1-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="dashboard-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="dashboard-light.png">
+  <img alt="Screenshot of the dashboard" src="dashboard-light.png">
 </picture>
 ---
 
