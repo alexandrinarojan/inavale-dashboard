@@ -5,11 +5,10 @@ An interactive dashboard for a fictional insurance group, built as a data analys
 
 **[Open the dashboard](https://alexandrinarojan.github.io/inavale-dashboard/)** · runs directly in the browser, no installation needed
 
-/*![Screenshot of the dashboard](captura1.png)*/
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="dashboard-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="dashboard-light.png">
-  <img alt="Screenshot of the dashboard" src="dashboard-light.png">
+  <img alt="Screenshot of the dashboard" src="dashboard-dark.png">
 </picture>
 ---
 
